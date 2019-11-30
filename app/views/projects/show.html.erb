@@ -1,24 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-12">
+  <p id="notice"><%= notice %></p>
+  <div class="card" style="width: auto;">
+    <div class="card-body">
+      <p>
+        <strong>Title:</strong>
+        <%= @project.title %>
+      </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @project.description %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+      <p>
+        <strong>Due:</strong>
+        <% if Date.today.day == (@project.created_at + @project.days_to_complete.days).day %>
+          Due Today
+        <% elsif Date.today < (@project.created_at + @project.days_to_complete.days) %>
+          <%= ((@project.created_at + @project.days_to_complete.days) - Date.today.day) %>
+        <% else %>
+          <%= Date.today - (@project.created_at + @project.days_to_complete.days) %>
+        <% end %>
 
-<p>
-  <strong>Days to complete:</strong>
-  <%= @project.days_to_complete %>
-</p>
+      </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
+      <% @project.tasks.each do |task| %>
+        <p>
+          <strong>Task:</strong>
+          <%= task.title %> <%= link_to 'Show', task_path(task.id)  %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Add Task", new_task_path(project_id: @project.id) %>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+</div>

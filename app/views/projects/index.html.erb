@@ -1,35 +1,58 @@
 <div class="col-md-12">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+  <h1>My Projects</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <% @projects.each do |project| %>
+        <div class="col-md-6">
+          <div class="card" style="width: auto;">
+            <div class="card-body">
+              <h2><%= project.title %></h2>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <b>Description:</b>
+                    <%= project.description %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <b>Due:</b>
+                    <% if Date.today.day == (project.created_at + project.days_to_complete.days).day %>
+                      Today
+                    <% elsif Date.today < (project.created_at + project.days_to_complete.days) %>
+                      <%= ((project.created_at + project.days_to_complete.days) - Date.today.day) %>
+                    <% else %>
+                      <%= Date.today - (project.created_at + project.days_to_complete.days) %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-6 col-md-4 col-xs-2">
+                  </div>
+                  <div class="col-xl-6 col-md-8 col-xs-10">
+                    <%= link_to 'View', project, :class => 'btn btn-info' %>
+                    <%= link_to 'Edit', edit_project_path(project), :class => 'btn btn-success' %>
+                    <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-sm-9 col-xs-3">
+      </div>
+      <div class="col-sm-1 col-xs-1">
+        <%= link_to image_tag('plus.svg', alt: 'Add Project', id: 'plus', :width => '60px', :class => 'btn btn-info', viewBox: "0 0 20 20", fill: "currentColor", xmlns: "http://www.w3.org/2000/svg"), new_project_path %>
+      </div>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Days to complete</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= project.days_to_complete %></td>
-        <td><%= project.user_id %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Project', new_project_path %>
 </div>
