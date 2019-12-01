@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="row">
       <% @projects.each do |project| %>
-        <div class="col-md-6">
+        <div class="col-md-6" style="padding-top: 15px;">
           <div class="card" style="width: auto;">
             <div class="card-body">
               <h2><%= project.title %></h2>
@@ -22,12 +22,13 @@
                     <% if Date.today.day == (project.created_at + project.days_to_complete.days).day %>
                       Today
                     <% elsif Date.today < (project.created_at + project.days_to_complete.days) %>
-                      <%= ((project.created_at + project.days_to_complete.days) - Date.today.day) %>
+                      <%= (( (project.created_at + project.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
                     <% else %>
-                      <%= Date.today - (project.created_at + project.days_to_complete.days) %>
+                      <%= ((Time.now - (project.created_at + project.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
                     <% end %>
                   </div>
                 </div>
+                <br/>
                 <div class="row">
                   <div class="col-xl-6 col-md-4 col-xs-2">
                   </div>
@@ -48,10 +49,10 @@
       <div class="col-sm-9 col-xs-3">
       </div>
       <div class="col-sm-1 col-xs-1">
-        <%= link_to image_tag('plus.svg', alt: 'Add Project', id: 'plus', :width => '60px', :class => 'btn btn-info', viewBox: "0 0 20 20", fill: "currentColor", xmlns: "http://www.w3.org/2000/svg"), new_project_path %>
+        <%= link_to image_tag('plus.svg', alt: 'Add Project', id: 'plus', :width => '60px', :class => 'btn btn-info', viewBox: "0 0 20 20", style: "currentColor", xmlns: "http://www.w3.org/2000/svg"), new_project_path %>
       </div>
+    </div>
   </div>
-</div>
 
 
 

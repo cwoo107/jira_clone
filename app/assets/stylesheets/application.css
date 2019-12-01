@@ -16,6 +16,7 @@
 
 body {
     font-family: 'Avenir', Helvetica, Arial, sans-serif !important;
+    background-color: #eceff1 !important;
 }
 
 .card {
@@ -24,6 +25,26 @@ body {
     0 4px 4px rgba(0,0,0,0.12),
     0 8px 8px rgba(0,0,0,0.12),
     0 16px 16px rgba(0,0,0,0.12);
+    transition: all 0.3s ease-in-out;
+}
+.card::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.01, 1.01);
+}
+
+/* Fade in the pseudo-element with the bigger shadow */
+.card:hover::after {
+    opacity: 1;
 }
 
 #plus {
@@ -31,9 +52,35 @@ body {
     height: 60px;
     width: 60px;
     border-radius: 100% !important;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.11),
+    0 2px 2px rgba(0,0,0,0.11),
+    0 4px 4px rgba(0,0,0,0.11),
+    0 6px 8px rgba(0,0,0,0.11),
+    0 8px 16px rgba(0,0,0,0.11);
 }
+
+#plus::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.4s ease-in-out;
+}
+#plus:hover {
+    transform: scale(1.04, 1.04);
+}
+
+/* Fade in the pseudo-element with the bigger shadow */
+#plus:hover::after {
+    opacity: 1;
+}
+
 #navbar {
-    background-color: #3F51B5;
+    background-color: #607d8b;
 }
 #navbar .row {
     padding-top: 7px;
@@ -47,4 +94,14 @@ body {
 #navbar a:visited,
 #navbar a:hover {
     color: white;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
