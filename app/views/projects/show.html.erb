@@ -2,10 +2,13 @@
   <p id="notice"><%= notice %></p>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12 text-center">
         <h1><%= @project.title %></h1>
       </div>
-      <div class="col-md-4">
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h4>
         <span class="badge badge-secondary">
         <strong>Due:</strong>
           <% if Date.today.day == (@project.created_at + @project.days_to_complete.days).day %>
@@ -16,8 +19,10 @@
           <%= ((Time.now - (@project.created_at + @project.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
         <% end %>
         </span>
+        </h4>
       </div>
     </div>
+    <br/>
     <br/>
     <div class="row">
       <div class="col-md-1">
@@ -70,9 +75,8 @@
                 </div>
                 <br/>
                 <div class="row">
-                  <div class="col-xl-7 col-md-4 col-xs-2">
-                  </div>
-                  <div class="col-xl-5 col-md-8 col-xs-10">
+
+                  <div class="col-xl-12 text-right">
                     <%= link_to 'Edit', edit_task_path(task.id, project_id: @project.id), :class => 'btn btn-primary btn-round' %>
                     <%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-danger btn-round' %>
                   </div>
