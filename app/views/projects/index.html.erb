@@ -6,50 +6,53 @@
     <div class="row">
       <% @projects.each do |project| %>
         <div class="col-md-6" style="padding-top: 15px;">
-          <div class="card" style="width: auto;">
-            <div class="card-body">
-              <h2><%= project.title %></h2>
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-12">
-                    <b>Description:</b>
-                    <%= project.description %>
+          <%= link_to project do %>
+            <div class="card" style="width: auto;">
+              <div class="card-body">
+                <h2><%= project.title %></h2>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <b>Description:</b>
+                      <%= project.description %>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <b>Due:</b>
-                    <% if Date.today.day == (project.created_at + project.days_to_complete.days).day %>
-                      Today
-                    <% elsif Date.today < (project.created_at + project.days_to_complete.days) %>
-                      <%= (( (project.created_at + project.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
-                    <% else %>
-                      <%= ((Time.now - (project.created_at + project.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
-                    <% end %>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <b>Due:</b>
+                      <% if Date.today.day == (project.created_at + project.days_to_complete.days).day %>
+                        Today
+                      <% elsif Date.today < (project.created_at + project.days_to_complete.days) %>
+                        <%= (( (project.created_at + project.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
+                      <% else %>
+                        <%= ((Time.now - (project.created_at + project.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
+                      <% end %>
+                    </div>
                   </div>
-                </div>
-                <br/>
-                <div class="row">
-                  <div class="col-xl-6 col-md-4 col-xs-2">
-                  </div>
-                  <div class="col-xl-6 col-md-8 col-xs-10">
-                    <%= link_to 'View', project, :class => 'btn btn-info' %>
-                    <%= link_to 'Edit', edit_project_path(project), :class => 'btn btn-success' %>
-                    <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+                  <br/>
+                  <div class="row">
+                    <div class="col-md-12 text-right">
+                      <%= link_to 'Edit', edit_project_path(project), :class => 'btn btn-primary btn-round' %>
+                      <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-outline-danger btn-round' %>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          <%end %>
         </div>
       <% end %>
     </div>
     <br/>
     <div class="row">
-      <div class="col-sm-9 col-xs-3">
-      </div>
-      <div class="col-sm-1 col-xs-1">
-        <%= link_to image_tag('plus.svg', alt: 'Add Project', id: 'plus', :width => '60px', :class => 'btn btn-info', viewBox: "0 0 20 20", style: "currentColor", xmlns: "http://www.w3.org/2000/svg"), new_project_path %>
+      <div class="col-sm-12 text-right">
+        <%= link_to  new_project_path, class: 'btn btn-round btn-info', style: 'box-shadow: 0 1px 1px rgba(0,0,0,0.11),
+              0 2px 2px rgba(0,0,0,0.11),
+              0 4px 4px rgba(0,0,0,0.11),
+              0 6px 8px rgba(0,0,0,0.11),
+              0 8px 16px rgba(0,0,0,0.11);' do %>
+            <%= image_tag('plus.svg', alt: 'Add Project', width: '40px', style: "margin-left: -10px !important; margin-right: -10px;") %>
+        <% end %>
       </div>
     </div>
   </div>
