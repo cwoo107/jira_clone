@@ -92,12 +92,6 @@ footer {
     padding-bottom:7px;
 }
 
-#navbar a:link,
-#navbar a:visited,
-#navbar a:hover {
-
-}
-
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -14672,7 +14666,7 @@ body {
     [class*="navbar-"] .navbar-nav .open .dropdown-menu>li>a:hover,
     [class*="navbar-"] .navbar-nav .open .dropdown-menu>li>a:focus,
     [class*="navbar-"] .navbar-nav .navbar-nav .open .dropdown-menu>li>a:active {
-        color: white;
+        color: #66615b;
     }
     [class*="navbar-"] .navbar-nav>li>a:not(.btn),
     [class*="navbar-"] .navbar-nav>li>a:hover,
@@ -16036,12 +16030,12 @@ License - nucleoapp.com/license/
 /*# sourceMappingURL=kit-pro.css.map */
 @keyframes animate {
     0%{
-        transform: translateY(-900px) rotate(0deg);
+        transform: translateY(-800px) rotate(0deg);
         opacity: 0;
         border-radius: 0;
     }
     50%{
-        transform: translateY(-500px) rotate(360deg);
+        transform: translateY(-400px) rotate(360deg);
         opacity: .4;
         border-radius: 25%;
     }
@@ -16071,9 +16065,6 @@ License - nucleoapp.com/license/
     height: 20px;
     animation: animate 41s linear infinite;
 }
-
-
-
 
 .background-animation li:nth-child(0) {
     left: 25%;

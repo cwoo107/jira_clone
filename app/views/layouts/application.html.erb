@@ -23,12 +23,12 @@
 
       <%= link_to image_tag('house.svg', id: 'home', alt: 'Home', :width => '40px', :class => 'bi bi-house ', viewBox: "0 0 20 20", fill: "currentColor", xmlns: "http://www.w3.org/2000/svg"), root_path %>
 
-  <ul class="navbar-nav navbar-right" >
+  <ul class="navbar-nav navbar-right" style="margin-right: 15px">
 
       <% if user_signed_in? %>
 
       <% else %>
-      <li class="nav-item">
+      <li class="nav-item d-none d-md-block">
         <%= link_to('Sign Up', new_user_registration_path, :class => "btn btn-sm btn-primary") %>
       </li>
       <% end %>
