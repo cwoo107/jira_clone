@@ -14,6 +14,22 @@
         <div class="col-md-6" style="padding-top: 15px;">
           <%= link_to project do %>
             <div class="card" style="width: auto;">
+              <div class="container text-right" style="margin-bottom: -20px">
+                <br/>
+                <% if Date.today.day == (project.created_at + project.days_to_complete.days).day %>
+                  <span class="badge badge-pill badge-warning"><b>Due:</b> Today</span>
+                <% elsif Date.today < (project.created_at + project.days_to_complete.days) %>
+                  <span class="badge badge-pill badge-success">
+                    <b>Due:</b>
+                  <%= (( (project.created_at + project.days_to_complete.day) - Time.now)/ 24.hours).to_i %>
+                    Day(s)
+                  </span>
+                <% else %>
+                  <span class="badge badge-pill badge-danger">
+                  <%= ((Time.now - (project.created_at + project.days_to_complete.day))/ 24.hours).to_i   %>
+                    Day(s) ago</span>
+                <% end %>
+              </div>
               <div class="card-body">
                 <h2><%= project.title %></h2>
                 <div class="container-fluid">
@@ -25,14 +41,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12">
-                      <b>Due:</b>
-                      <% if Date.today.day == (project.created_at + project.days_to_complete.days).day %>
-                        Today
-                      <% elsif Date.today < (project.created_at + project.days_to_complete.days) %>
-                        <%= (( (project.created_at + project.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
-                      <% else %>
-                        <%= ((Time.now - (project.created_at + project.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
-                      <% end %>
+
                     </div>
                   </div>
                   <br/>
@@ -57,7 +66,7 @@
               0 4px 4px rgba(0,0,0,0.11),
               0 6px 8px rgba(0,0,0,0.11),
               0 8px 16px rgba(0,0,0,0.11);' do %>
-            <%= image_tag('plus.svg', alt: 'Add Project', width: '40px', style: "margin-left: -10px !important; margin-right: -10px;") %>
+          <%= image_tag('plus.svg', alt: 'Add Project', width: '40px', style: "margin-left: -10px !important; margin-right: -10px;") %>
         <% end %>
       </div>
     </div>
