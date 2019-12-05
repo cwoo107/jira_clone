@@ -18,11 +18,10 @@ body {
     margin-left: -5px;
     font-family: 'Avenir', Helvetica, Arial, sans-serif !important;
     background-color: #eceff1 !important;
-    padding-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 footer {
-    position: fixed;
     height: 60px;
     bottom: 0;
     width: 100%;
@@ -16032,17 +16031,22 @@ License - nucleoapp.com/license/
     0%{
         transform: translateY(-800px) rotate(0deg);
         opacity: 0;
-        border-radius: 0;
+        border-radius: 5%;
+    }
+    25%{
+        transform: translateY(-600px) rotate(180deg);
+        opacity: .4;
+        border-radius: 10%;
     }
     50%{
         transform: translateY(-400px) rotate(360deg);
-        opacity: .4;
+        opacity: .2;
         border-radius: 25%;
     }
     100%{
         transform: translateY(0) rotate(720deg);
         opacity: 0;
-        border-radius: 50%;
+        border-radius: 5%;
     }
 }
 
@@ -16054,7 +16058,7 @@ License - nucleoapp.com/license/
     left: 0;
     margin: 0;
     padding: 0;
-    background: #eceff1;
+    background: transparent;
     overflow: hidden;
 }
 .background-animation li {
@@ -16108,9 +16112,9 @@ License - nucleoapp.com/license/
 }
 .background-animation li:nth-child(5) {
     left: 85%;
-    width: 108px;
-    height: 108px;
-    bottom: -108px;
+    width: 118px;
+    height: 118px;
+    bottom: -118px;
     animation-delay: 14s;
     background: #fbc658;
 }
@@ -16121,4 +16125,9 @@ License - nucleoapp.com/license/
     bottom: -128px;
     animation-delay: 28s;
     background: #51bcda;
+}
+
+#gradient {
+    background: rgb(81,188,218);
+    background: linear-gradient(160deg, rgba(81,188,218,.3) 0%, rgba(81,203,206,0.0) 50%);
 }

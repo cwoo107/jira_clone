@@ -47,8 +47,11 @@
   </div>
 </div>
 
-
-<div class="container-fluid" style="padding-top: 50px">
+<% if user_signed_in? %>
+  <div class="container-fluid" style="padding-top: 50px">
+  <% else %>
+  <div class="container-fluid" id='gradient' style="padding-top: 50px">
+<% end %>
   <div class="row">
     <%= yield %>
   </div>
