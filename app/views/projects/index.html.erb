@@ -26,6 +26,7 @@
                   </span>
                 <% else %>
                   <span class="badge badge-pill badge-danger">
+                    <b>Due: </b>
                   <%= ((Time.now - (project.created_at + project.days_to_complete.day))/ 24.hours).to_i   %>
                     Day(s) ago</span>
                 <% end %>

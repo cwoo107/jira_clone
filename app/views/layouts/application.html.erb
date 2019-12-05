@@ -17,7 +17,26 @@
 </head>
 
 <body>
+<% if user_signed_in? %>
+  <style>
+    #navbar {
+      background-color: #139295 !important;
+    }
+      #home {
+        filter: invert(1);
+      }
+    .navbar-transparent .navbar-nav .open .nav-link,
+    .navbar-transparent .navbar-nav .open .nav-link:hover,
+    .navbar-transparent .navbar-nav .open .nav-link:focus,
+    [class*="bg"] .navbar-nav .open .nav-link,
+    [class*="bg"] .navbar-nav .open .nav-link:hover,
+    [class*="bg"] .navbar-nav .open .nav-link:focus {
+      color: #f7f7f9 !important;
+    }
+  </style>
+<% else %>
 
+  <% end %>
 <div class="navbar navbar-expand-lg fixed-top" id="navbar" >
   <div class="container" >
 
@@ -29,13 +48,13 @@
 
       <% else %>
       <li class="nav-item d-none d-md-block">
-        <%= link_to('Sign Up', new_user_registration_path, :class => "btn btn-sm btn-primary") %>
+        <%= link_to('Sign Up', new_user_registration_path, :class => "btn btn-sm btn-danger") %>
       </li>
       <% end %>
 
       <% if user_signed_in? %>
       <li class="nav-item">
-        <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "btn btn-sm btn-outline-default") %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "btn btn-sm btn-outline-neutral") %>
       </li>
       <% else %>
       <li class="nav-item">

@@ -5,5 +5,16 @@
 
 <%= render 'form', task: @task %>
 
-<%= link_to 'Back', tasks_path %>
+
+  <div class="container">
+    <%= link_to  :back, class: 'btn btn-round btn-default', style: 'box-shadow: 0 1px 1px rgba(0,0,0,0.11),
+    0 2px 2px rgba(0,0,0,0.11),
+    0 4px 4px rgba(0,0,0,0.11),
+    0 6px 8px rgba(0,0,0,0.11),
+    0 8px 16px rgba(0,0,0,0.11);' do %>
+
+      <%= image_tag('reply.svg', width: '40px', alt: 'back', style: "margin-left: -10px !important; margin-right: -10px;") %>
+
+    <% end %>
+  </div>
 </div>
