@@ -50,8 +50,17 @@
               <div class="col-md-12" style="padding-top: 15px;">
                 <div class="card" style="width: auto;">
                   <div class="card-body">
-                    <h3><%= task.title %></h3>
-
+                    <h3 class="card-title"><%= task.title %></h3>
+                    <h6 class="card-subtitle">
+                      <b>Due:</b>
+                      <% if Date.today.day == (task.created_at + task.days_to_complete.days).day %>
+                        Today
+                      <% elsif Date.today < (task.created_at + task.days_to_complete.days) %>
+                        <%= (( (task.created_at + task.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
+                      <% else %>
+                        <%= ((Time.now - (task.created_at + task.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
+                      <% end %>
+                    </h6>
                     <div class="container-fluid">
                       <div class="row">
                         <div class="col-md-12 text-right">
@@ -66,20 +75,8 @@
                       </div>
                       <br/>
                       <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 card-text">
                           <%= task.description %>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <b>Due:</b>
-                          <% if Date.today.day == (task.created_at + task.days_to_complete.days).day %>
-                            Today
-                          <% elsif Date.today < (task.created_at + task.days_to_complete.days) %>
-                            <%= (( (task.created_at + task.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
-                          <% else %>
-                            <%= ((Time.now - (task.created_at + task.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
-                          <% end %>
                         </div>
                       </div>
                       <br/>
@@ -106,8 +103,17 @@
               <div class="col-md-12" style="padding-top: 15px;">
                 <div class="card" style="width: auto;">
                   <div class="card-body">
-                    <h3><%= task.title %></h3>
-
+                    <h3 class="card-title"><%= task.title %></h3>
+                    <h6 class="card-subtitle">
+                      <b>Due:</b>
+                      <% if Date.today.day == (task.created_at + task.days_to_complete.days).day %>
+                        Today
+                      <% elsif Date.today < (task.created_at + task.days_to_complete.days) %>
+                        <%= (( (task.created_at + task.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
+                      <% else %>
+                        <%= ((Time.now - (task.created_at + task.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
+                      <% end %>
+                    </h6>
                     <div class="container-fluid">
                       <div class="row">
                         <div class="col-md-12 text-right">
@@ -122,20 +128,8 @@
                       </div>
                       <br/>
                       <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 card-text">
                           <%= task.description %>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <b>Due:</b>
-                          <% if Date.today.day == (task.created_at + task.days_to_complete.days).day %>
-                            Today
-                          <% elsif Date.today < (task.created_at + task.days_to_complete.days) %>
-                            <%= (( (task.created_at + task.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
-                          <% else %>
-                            <%= ((Time.now - (task.created_at + task.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
-                          <% end %>
                         </div>
                       </div>
                       <br/>
@@ -162,8 +156,17 @@
               <div class="col-md-12" style="padding-top: 15px;">
                 <div class="card" style="width: auto;">
                   <div class="card-body">
-                    <h3><%= task.title %></h3>
-
+                    <h3 class="card-title"><%= task.title %></h3>
+                    <h6 class="card-subtitle">
+                      <b>Due:</b>
+                      <% if Date.today.day == (task.created_at + task.days_to_complete.days).day %>
+                        Today
+                      <% elsif Date.today < (task.created_at + task.days_to_complete.days) %>
+                        <%= (( (task.created_at + task.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
+                      <% else %>
+                        <%= ((Time.now - (task.created_at + task.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
+                      <% end %>
+                    </h6>
                     <div class="container-fluid">
                       <div class="row">
                         <div class="col-md-12 text-right">
@@ -178,20 +181,8 @@
                       </div>
                       <br/>
                       <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 card-text">
                           <%= task.description %>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <b>Due:</b>
-                          <% if Date.today.day == (task.created_at + task.days_to_complete.days).day %>
-                            Today
-                          <% elsif Date.today < (task.created_at + task.days_to_complete.days) %>
-                            <%= (( (task.created_at + task.days_to_complete.day) - Time.now)/ 24.hours).to_i %> Day(s)
-                          <% else %>
-                            <%= ((Time.now - (task.created_at + task.days_to_complete.day))/ 24.hours).to_i   %> Day(s) ago
-                          <% end %>
                         </div>
                       </div>
                       <br/>
