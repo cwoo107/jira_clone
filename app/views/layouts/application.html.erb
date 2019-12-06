@@ -15,8 +15,11 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
 </head>
-
+<% if user_signed_in? %>
 <body>
+<% else %>
+<body id='gradient'>
+<% end %>
 <% if user_signed_in? %>
   <style>
     #navbar {
@@ -40,9 +43,9 @@
 <div class="navbar navbar-expand-lg fixed-top" id="navbar" >
   <div class="container" >
 
-      <%= link_to image_tag('house.svg', id: 'home', alt: 'Home', :width => '40px', :class => 'bi bi-house ', viewBox: "0 0 20 20", fill: "currentColor", xmlns: "http://www.w3.org/2000/svg"), root_path %>
+      <%= link_to image_tag('house.svg', id: 'home', alt: 'Home', :width => '40px', :class => 'bi bi-house ', viewBox: "0 0 20 20", fill: "currentColor", xmlns: "http://www.w3.org/2000/svg"), root_path, style: "z-index : 1;" %>
 
-  <ul class="navbar-nav navbar-right" style="margin-right: 15px">
+  <ul class="navbar-nav navbar-right" style="margin-right: 15px;z-index : 1;">
 
       <% if user_signed_in? %>
 
@@ -69,7 +72,7 @@
 <% if user_signed_in? %>
   <div class="container-fluid" style="padding-top: 50px">
   <% else %>
-  <div class="container-fluid" id='gradient' style="padding-top: 50px">
+  <div class="container-fluid"  style="padding-top: 50px">
 <% end %>
   <div class="row">
     <%= yield %>
