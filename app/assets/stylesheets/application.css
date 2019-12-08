@@ -16041,24 +16041,107 @@ License - nucleoapp.com/license/
 /*# sourceMappingURL=kit-pro.css.map */
 @keyframes animate {
     0%{
-        transform: translateY(-800px) rotate(0deg) scale(1);
-        opacity: 0;
-        border-radius: 5%;
-    }
-    25%{
-        transform: translateY(-650px) rotate(90deg) scale(1.25);
-        opacity: .4;
+        transform: translateY(-700px) rotate(90deg) scale(1);
+        opacity: .3;
         border-radius: 5%;
     }
     50%{
-        transform: translateY(-500px) rotate(180deg) scale(1.5);
+        transform: translateY(-400px) rotate(270deg) scale(1.5);
         opacity: .2;
         border-radius: 25%;
     }
     100%{
-        transform: translateY(-800px) rotate(360deg) scale(1);
-        opacity: 0;
+        transform: translateY(-700px) rotate(450deg) scale(1);
+        opacity: .3;
         border-radius: 5%;
+    }
+}
+@keyframes animate2 {
+    0%{
+        transform: translateY(-750px) rotate(0deg) scale(1);
+        opacity: .2;
+        border-radius: 5%;
+    }
+    50%{
+        transform: translateY(-400px) rotate(180deg) scale(1.5);
+        opacity: .4;
+        border-radius: 25%;
+    }
+    100%{
+        transform: translateY(-750px) rotate(360deg) scale(1);
+        opacity: .2;
+        border-radius: 5%;
+    }
+}
+@keyframes animate3 {
+    0%{
+        transform: translateY(-900px) rotate(360deg) scale(1);
+        opacity: .4;
+        border-radius: 5%;
+    }
+    50%{
+        transform: translateY(-400px) rotate(180deg) scale(1.5);
+        opacity: .2;
+        border-radius: 25%;
+    }
+    100%{
+        transform: translateY(-900px) rotate(0deg) scale(1);
+        opacity: .4;
+        border-radius: 5%;
+    }
+}
+@keyframes animate4 {
+    0%{
+        transform: translateY(-500px) rotate(360deg) scale(1.5);
+        opacity: .2;
+        border-radius: 25%;
+    }
+    50%{
+        transform: translateY(-800px) rotate(180deg) scale(1);
+        opacity: .4;
+        border-radius: 5%;
+    }
+
+    100%{
+        transform: translateY(-500px) rotate(0deg) scale(1.5);
+        opacity: .2;
+        border-radius: 25%;
+    }
+}
+@keyframes animate5 {
+    0%{
+        transform: translateY(-400px) rotate(360deg) scale(1);
+        opacity: .2;
+        border-radius: 25%;
+    }
+    50%{
+        transform: translateY(-700px) rotate(180deg) scale(1.5);
+        opacity: .4;
+        border-radius: 5%;
+    }
+
+    100%{
+        transform: translateY(-400px) rotate(0deg) scale(1);
+        opacity: .2;
+        border-radius: 25%;
+    }
+}
+@keyframes animate6 {
+    0%{
+        transform: translateY(-350px) rotate(0deg) scale(1.5);
+        opacity: .2;
+        border-radius: 25%;
+    }
+    50%{
+        transform: translateY(-800px) rotate(180deg) scale(1);
+        opacity: .4;
+        border-radius: 5%;
+    }
+
+    100%{
+        transform: translateY(-350px) rotate(360deg) scale(1.5);
+        opacity: .2;
+        border-radius: 25%;
     }
 }
 
@@ -16079,7 +16162,6 @@ License - nucleoapp.com/license/
     list-style: none;
     width: 20px;
     height: 20px;
-    animation: animate 41s linear infinite;
 }
 
 .background-animation li:nth-child(0) {
@@ -16087,40 +16169,41 @@ License - nucleoapp.com/license/
     width: 154px;
     height: 154px;
     bottom: -154px;
-    animation-delay: 0s;
     background: #51cbce;
+    animation: animate 41s linear infinite;
 }
 .background-animation li:nth-child(1) {
     left: 79%;
     width: 128px;
     height: 128px;
     bottom: -128px;
-    animation-delay: 1s;
     background: #51bcda;
+    animation: animate2 46s linear infinite;
 }
 .background-animation li:nth-child(2) {
-    left: 60%;
+    left: 68%;
     width: 136px;
     height: 136px;
     bottom: -136px;
     animation-delay: 8s;
     background: #f5593d;
+    animation: animate3 39s linear infinite;
 }
 .background-animation li:nth-child(3) {
-    left: 41%;
+    left: 46%;
     width: 171px;
     height: 171px;
     bottom: -171px;
-    animation-delay: 5.5s;
     background: #6bd098;
+    animation: animate2 41s linear infinite;
 }
 .background-animation li:nth-child(4) {
-    left: 48%;
+    left: 52%;
     width: 108px;
     height: 108px;
     bottom: -108px;
-    animation-delay: 19s;
     background: #fbc658;
+    animation: animate4 45s linear infinite;
 }
 .background-animation li:nth-child(5) {
     left: 85%;
@@ -16129,14 +16212,16 @@ License - nucleoapp.com/license/
     bottom: -118px;
     animation-delay: 14s;
     background: #fbc658;
+    animation: animate5 38s linear infinite;
 }
 .background-animation li:nth-child(6) {
-    left: 58%;
+    left: 62%;
     width: 128px;
     height: 128px;
     bottom: -128px;
     animation-delay: 28s;
     background: #51bcda;
+    animation: animate6 36s linear infinite;
 }
 
 #gradient {
