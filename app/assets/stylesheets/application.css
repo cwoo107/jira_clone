@@ -16041,17 +16041,27 @@ License - nucleoapp.com/license/
 /*# sourceMappingURL=kit-pro.css.map */
 @keyframes animate {
     0%{
-        transform: translateY(-700px) rotate(90deg) scale(1);
+        transform: translateY(-550px) rotate(360deg) scale(1);
         opacity: .3;
         border-radius: 5%;
     }
-    50%{
+    25%{
         transform: translateY(-400px) rotate(270deg) scale(1.5);
         opacity: .2;
         border-radius: 25%;
     }
+    50%{
+        transform: translateY(-550px) rotate(180deg) scale(1);
+        opacity: .3;
+        border-radius: 5%;
+    }
+    75%{
+        transform: translateY(-700px) rotate(90deg) scale(1);
+        opacity: .3;
+        border-radius: 5%;
+    }
     100%{
-        transform: translateY(-700px) rotate(450deg) scale(1);
+        transform: translateY(-550px) rotate(0deg) scale(1);
         opacity: .3;
         border-radius: 5%;
     }
@@ -16164,13 +16174,13 @@ License - nucleoapp.com/license/
     height: 20px;
 }
 
-.background-animation li:nth-child(0) {
-    left: 25%;
+.background-animation li:nth-child(7) {
+    left: 65%;
     width: 154px;
     height: 154px;
     bottom: -154px;
     background: #51cbce;
-    animation: animate 41s linear infinite;
+    animation: animate 35s linear infinite;
 }
 .background-animation li:nth-child(1) {
     left: 79%;
