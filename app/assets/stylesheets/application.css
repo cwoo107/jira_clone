@@ -96,6 +96,10 @@ footer {
     right: 0;
     bottom: 0;
     filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-filter: blur(1px);
+    -webkit-filter: blur(1px);
+    -o-filter: blur(1px);
     background: inherit;
 }
 #navbar .row {
@@ -16041,122 +16045,122 @@ License - nucleoapp.com/license/
 /*# sourceMappingURL=kit-pro.css.map */
 @keyframes animate {
     0%{
-        transform: translateY(-550px) rotate(360deg) scale(1);
+        transform: translateY(-700px) rotate(360deg) scale(1);
         opacity: .3;
         border-radius: 5%;
     }
     25%{
-        transform: translateY(-400px) rotate(270deg) scale(1.5);
+        transform: translateY(-550px) rotate(270deg) scale(1.5);
         opacity: .2;
         border-radius: 25%;
     }
     50%{
-        transform: translateY(-550px) rotate(180deg) scale(1);
+        transform: translateY(-700px) rotate(180deg) scale(1);
         opacity: .3;
         border-radius: 5%;
     }
     75%{
-        transform: translateY(-700px) rotate(90deg) scale(1);
+        transform: translateY(-850px) rotate(90deg) scale(1);
         opacity: .3;
         border-radius: 5%;
     }
     100%{
-        transform: translateY(-550px) rotate(0deg) scale(1);
+        transform: translateY(-700px) rotate(0deg) scale(1);
         opacity: .3;
         border-radius: 5%;
     }
 }
 @keyframes animate2 {
     0%{
-        transform: translateY(-750px) rotate(0deg) scale(1);
+        transform: translateY(-900px) rotate(0deg) scale(1);
         opacity: .2;
         border-radius: 5%;
     }
     50%{
-        transform: translateY(-400px) rotate(180deg) scale(1.5);
+        transform: translateY(-550px) rotate(180deg) scale(1.5);
         opacity: .4;
         border-radius: 25%;
     }
     100%{
-        transform: translateY(-750px) rotate(360deg) scale(1);
+        transform: translateY(-900px) rotate(360deg) scale(1);
         opacity: .2;
         border-radius: 5%;
     }
 }
 @keyframes animate3 {
     0%{
-        transform: translateY(-900px) rotate(360deg) scale(1);
+        transform: translateY(-1050px) rotate(360deg) scale(1);
         opacity: .4;
         border-radius: 5%;
     }
     50%{
-        transform: translateY(-400px) rotate(180deg) scale(1.5);
+        transform: translateY(-550px) rotate(180deg) scale(1.5);
         opacity: .2;
         border-radius: 25%;
     }
     100%{
-        transform: translateY(-900px) rotate(0deg) scale(1);
+        transform: translateY(-1050px) rotate(0deg) scale(1);
         opacity: .4;
         border-radius: 5%;
     }
 }
 @keyframes animate4 {
     0%{
-        transform: translateY(-500px) rotate(360deg) scale(1.5);
+        transform: translateY(-650px) rotate(360deg) scale(1.5);
         opacity: .2;
         border-radius: 25%;
     }
     50%{
-        transform: translateY(-800px) rotate(180deg) scale(1);
+        transform: translateY(-950px) rotate(180deg) scale(1);
         opacity: .4;
         border-radius: 5%;
     }
 
     100%{
-        transform: translateY(-500px) rotate(0deg) scale(1.5);
+        transform: translateY(-650px) rotate(0deg) scale(1.5);
         opacity: .2;
         border-radius: 25%;
     }
 }
 @keyframes animate5 {
     0%{
-        transform: translateY(-400px) rotate(360deg) scale(1);
+        transform: translateY(-550px) rotate(360deg) scale(1);
         opacity: .2;
         border-radius: 25%;
     }
     50%{
-        transform: translateY(-700px) rotate(180deg) scale(1.5);
+        transform: translateY(-850px) rotate(180deg) scale(1.5);
         opacity: .4;
         border-radius: 5%;
     }
 
     100%{
-        transform: translateY(-400px) rotate(0deg) scale(1);
+        transform: translateY(-550px) rotate(0deg) scale(1);
         opacity: .2;
         border-radius: 25%;
     }
 }
 @keyframes animate6 {
     0%{
-        transform: translateY(-350px) rotate(0deg) scale(1.5);
+        transform: translateY(-500px) rotate(0deg) scale(1.5);
         opacity: .2;
         border-radius: 25%;
     }
     50%{
-        transform: translateY(-800px) rotate(180deg) scale(1);
+        transform: translateY(-950px) rotate(180deg) scale(1);
         opacity: .4;
         border-radius: 5%;
     }
 
     100%{
-        transform: translateY(-350px) rotate(360deg) scale(1.5);
+        transform: translateY(-500px) rotate(360deg) scale(1.5);
         opacity: .2;
         border-radius: 25%;
     }
 }
 
 .background-animation {
-    position: fixed;
+    position: absolute;
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -16164,7 +16168,7 @@ License - nucleoapp.com/license/
     margin: 0;
     padding: 0;
     background: transparent;
-    overflow: hidden;
+
 }
 .background-animation li {
     position: absolute;
